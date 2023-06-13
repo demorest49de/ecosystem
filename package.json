@@ -8,6 +8,7 @@
     "redom": "^3.29.1"
   },
   "devDependencies": {
-    "buffer": "^6.0.3"
+    "buffer": "^6.0.3",
+    "parcel": "^2.9.2"
   }
 }
