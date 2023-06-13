@@ -1,13 +1,16 @@
-import {el, setChildren} from "../node_modules/redom/dist/redom.es.js";
+import {el, setChildren} from "redom";
+import axios from "axios";
+import Navigo from "navigo";
+
+const router = new Navigo('/');
 
 const URL = 'https://muddy-substantial-gear.glitch.me/api/';
 
 
-const goodsDetailsPage = (id, comeBack) => {
+const goodsDetailsPage = (id) => {
     const body = el(`div`, `Загрузка...`);
-    fetch(`${URL}/goods/${id}`)
-        .then(res => res.json())
-        .then(({title, description, price}) => {
+    axios.get(`${URL}/goods/${id}`)
+        .then(({data: {title, description, price}}) => {
             setChildren(body, [
                 el(`h2`, title),
                 el(`p`, description),
@@ -16,7 +19,7 @@ const goodsDetailsPage = (id, comeBack) => {
                     href: '/',
                     onclick(event) {
                         event.preventDefault();
-                        setChildren(document.body, comeBack());
+                        router.navigate(event.target.getAttribute('href'));
                     }
                 }, `вернуться на главную`),
             ]);
@@ -28,14 +31,14 @@ const goodsDetailsPage = (id, comeBack) => {
 const goodsListPage = () => {
     const list = el('ul', el('li', "загрузка"));
 
-    fetch(`${URL}goods`).then(res => res.json())
-        .then(data => {
+    axios.get(`${URL}goods`)
+        .then(({data}) => {
             setChildren(list, data.map(({id, title}) =>
                 el('li', el('a', {
                     href: `/goods/${id}`,
                     onclick(e) {
                         e.preventDefault();
-                        setChildren(document.body, goodsDetailsPage(id, goodsListPage));
+                        router.navigate(event.target.getAttribute('href'));
                     },
                 }, title))));
         });
@@ -43,4 +46,14 @@ const goodsListPage = () => {
     return el('div', {className: 'container'}, [el('h1', 'товары')], list);
 };
 
-setChildren(document.body, goodsListPage());
+router.on('/', () => {
+    setChildren(document.body, goodsListPage());
+});
+
+router.on('/goods/:id', (data) => {
+    const {data: {id}} = data;
+    console.log(' : ', data);
+    setChildren(document.body, goodsDetailsPage(id));
+});
+
+router.resolve();
