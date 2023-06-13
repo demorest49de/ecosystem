@@ -1,0 +1,9 @@
+{
+  "name": "eco-system",
+  "scripts": {},
+  "author": "Shevchenko Andrey",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "redom": "^3.29.1"
+  }
+}
