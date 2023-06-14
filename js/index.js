@@ -96,7 +96,6 @@ const form = () => {
     );
 };
 
-
 const creditCard = () => {
 
     return el('div', {
@@ -135,7 +134,6 @@ const card = () => {
 };
 
 const wrapper = () => {
-
     return el('div', {className: 'wrapper'}, card());
 };
 
