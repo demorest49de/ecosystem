@@ -1,8 +1,11 @@
 import {el, setChildren} from 'redom';
-import axios from 'axios';
+// import axios from 'axios';
 import Navigo from "navigo";
-
 const router = new Navigo('/');
+import $ from 'jquery';
+
+const o = $('body').outerHTML;
+console.log(' : ',o);
 
 const form = () => {
     return el('form', {
@@ -30,13 +33,22 @@ const form = () => {
                             oninput(event) {
                                 event.preventDefault();
                                 const target = event.target;
+                                target.value = target.value.length >= 20 ? target.value.substring(0, 20) : target.value;
                                 target.value = target.value.replace(/[^a-zA-Z\s]/g, '');
                                 target.value = target.value.replace(/[a-z]/g, x => x.toUpperCase());
-                                console.log(' : ', target.value);
+
                                 const regex1 = new RegExp('^(?:[^\\s]*[\\s]?[^\\s]*){1}$', 'g');
                                 const res = regex1.test(target.value);
-                                console.log(' : ', res);
-                                console.log(' : ',target.selectionStart);
+
+                                const caret = target.selectionStart;
+                                if (!res) {
+                                    let arr = target.value.split('');
+                                    arr.splice(caret - 1, 1);
+                                    target.value = arr.join('');
+                                }
+                                target.value = caret === 1 ? target.value.toString().trimStart() : target.value;
+                                document.querySelector('.card__name').textContent = target.value;
+
                             }
                         }),
                 ]
@@ -59,7 +71,28 @@ const form = () => {
                             id: 'cardNumber',
                             onmouseenter(event) {
                                 event.preventDefault();
-                            }
+                                const target = event.target;
+                                target.placeholder = 'xxxx xxxx xxxx xxxx';
+                            },
+                            onmouseleave(event) {
+                                event.preventDefault();
+                                const target = event.target;
+                                target.placeholder = '';
+                            },
+                            onclick(event) {
+                                event.preventDefault();
+                                const target = event.target;
+                                // target.value = document.querySelector('.card__number').textContent;
+
+                            },
+                            oninput(event) {
+                                event.preventDefault();
+                                const target = event.target;
+                                target.value = target.value.length >= 19 ? target.value.substring(0, 19) : target.value;
+                                target.value = target.value.replace(/[^0-9]/g, '');
+
+                                // document.querySelector('.card__number').textContent = target.value;
+                            },
                         }),
                 ]
             ),
