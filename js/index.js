@@ -27,6 +27,17 @@ const form = () => {
                             type: 'text',
                             className: 'input input__holder',
                             id: 'cardName',
+                            oninput(event) {
+                                event.preventDefault();
+                                const target = event.target;
+                                target.value = target.value.replace(/[^a-zA-Z\s]/g, '');
+                                target.value = target.value.replace(/[a-z]/g, x => x.toUpperCase());
+                                console.log(' : ', target.value);
+                                const regex1 = new RegExp('^(?:[^\\s]*[\\s]?[^\\s]*){1}$', 'g');
+                                const res = regex1.test(target.value);
+                                console.log(' : ', res);
+                                console.log(' : ',target.selectionStart);
+                            }
                         }),
                 ]
             ),
@@ -46,6 +57,9 @@ const form = () => {
                             type: 'text',
                             className: 'input input__number',
                             id: 'cardNumber',
+                            onmouseenter(event) {
+                                event.preventDefault();
+                            }
                         }),
                 ]
             ),
