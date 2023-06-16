@@ -5,6 +5,7 @@
   "homepage": "https://github.com/demorest49de/ecosystem#readme",
   "dependencies": {
     "jquery": "^3.7.0",
+    "jquery.maskedinput": "^1.4.1",
     "navigo": "^8.11.1",
     "redom": "^3.29.1"
   },

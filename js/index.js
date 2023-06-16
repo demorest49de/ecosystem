@@ -4,10 +4,7 @@ import Navigo from "navigo";
 
 const router = new Navigo('/');
 import $ from 'jquery';
-
-
-console.log(' : ',$);
-console.log(' : ',$('inpit'));
+import 'jquery.maskedinput/src/jquery.maskedinput.js';
 
 const form = () => {
     return el('form', {
@@ -191,3 +188,6 @@ router.on('/', () => {
 });
 
 router.resolve();
+
+
+$('.input__number').mask('9999 9999 9999 9999', {placeholder: 'xxxx xxxx xxxx xxxx'});
