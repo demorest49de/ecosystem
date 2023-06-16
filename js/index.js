@@ -1,11 +1,13 @@
 import {el, setChildren} from 'redom';
 // import axios from 'axios';
 import Navigo from "navigo";
+
 const router = new Navigo('/');
 import $ from 'jquery';
 
-const o = $('body').outerHTML;
-console.log(' : ',o);
+
+console.log(' : ',$);
+console.log(' : ',$('inpit'));
 
 const form = () => {
     return el('form', {

@@ -1,20 +1,14 @@
 {
   "name": "eco-system",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {},
+  "author": "Shevchenko Andrey",
+  "homepage": "https://github.com/demorest49de/ecosystem#readme",
+  "dependencies": {
+    "jquery": "^3.7.0",
+    "navigo": "^8.11.1",
+    "redom": "^3.29.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/demorest49de/ecosystem.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/demorest49de/ecosystem/issues"
-  },
-  "homepage": "https://github.com/demorest49de/ecosystem#readme"
+  "devDependencies": {
+    "parcel": "^2.9.2"
+  }
 }
