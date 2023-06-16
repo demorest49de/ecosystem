@@ -78,20 +78,6 @@ const form = () => {
                                 const target = event.target;
                                 target.placeholder = '';
                             },
-                            onclick(event) {
-                                event.preventDefault();
-                                const target = event.target;
-                                // target.value = document.querySelector('.card__number').textContent;
-
-                            },
-                            oninput(event) {
-                                event.preventDefault();
-                                const target = event.target;
-                                target.value = target.value.length >= 19 ? target.value.substring(0, 19) : target.value;
-                                target.value = target.value.replace(/[^0-9]/g, '');
-
-                                // document.querySelector('.card__number').textContent = target.value;
-                            },
                         }),
                 ]
             ),
@@ -151,7 +137,7 @@ const creditCard = () => {
             el('span',
                 {
                     className: 'card__number',
-                    textContent: 'xxxx xxxx xxxx xxxx'
+                    textContent: 'xxxx xxxx xxxx xxxx',
                 }),
             el('div',
                 {
@@ -191,3 +177,9 @@ router.resolve();
 
 
 $('.input__number').mask('9999 9999 9999 9999', {placeholder: 'xxxx xxxx xxxx xxxx'});
+$('.input__number').on('keydown', (event) => {
+    const target = event.target;
+    console.log(' : ',target.value);
+});
+$('.input__date').mask('99/99');
+$('.input__cvv').mask('999');
