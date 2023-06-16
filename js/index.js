@@ -177,9 +177,10 @@ router.resolve();
 
 
 $('.input__number').mask('9999 9999 9999 9999', {placeholder: 'xxxx xxxx xxxx xxxx'});
-$('.input__number').on('keydown', (event) => {
+$('.input__number').on('keyup', (event) => {
     const target = event.target;
-    console.log(' : ',target.value);
+    console.log(' : ', target.value);
+    document.querySelector('.card__number').textContent = target.value;
 });
 $('.input__date').mask('99/99');
 $('.input__cvv').mask('999');
