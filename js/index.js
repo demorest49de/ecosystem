@@ -165,15 +165,112 @@ import 'jquery.maskedinput/src/jquery.maskedinput.js';
 //     );
 // };
 //
-// const wrapper = () => {
-//     return el('div', {className: 'wrapper'}, card());
-// };
+const wrapper = () => {
+    const title = el('div', {className: 'payment-title'},
+        el('h1', 'Payment Information'));
 
-// router.on('/', () => {
-//     setChildren(document.body, wrapper());
-// });
-//
-// router.resolve();
+
+    const container = el('div', {
+                className: 'container'
+            },
+            el(`div`,
+                {
+                    className: "creditcard"
+                },
+                [
+                    el(`div`,
+                        {
+                            className: "front"
+                        },
+                        [
+                            el(`div`,
+                                {
+                                    className: "ccsingle"
+                                }
+                            ),
+                            el(`svg`,
+                                {
+                                    version: "1.1",
+                                    id: "cardfront",
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    x: "0px", y: "0px",
+                                    viewBox: "0 0 750 471",
+                                    style: "enable-background:new 0 0 750 471;",
+                                    "xml:space": "preserve"
+
+                                }, el(`g`,
+                                    {
+                                        id: "froint"
+                                    }, el(`g`,
+                                        {
+                                            id: "CardBackground"
+                                        },
+
+                                        [
+                                            el(`g`,
+                                                {
+                                                    id: "Page-1_1_"
+                                                }, el(`g`,
+                                                    {
+                                                        id: "amex_1_"
+                                                    }, el(`path`,
+                                                        {
+                                                            id: "Rectangle-1_1_",
+                                                            class: "lightcolor grey",
+                                                            d: "M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9," +
+                                                                "40-40,40H40c-22.1,0-40-17.9-40-40V40C0,17.9,17.9,0,40,0z"
+                                                        },
+                                                    )
+                                                )
+                                            ),
+                                            el(`path`,
+                                                {
+                                                    class: "darkcolor greydark",
+                                                    d: "M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40," +
+                                                        "40h670C732.1,471,750,453.1,750,431z"
+                                                },
+                                            ),
+                                            el(`text`,
+                                                {},
+                                            ), ,
+                                            el(`text`,
+                                                {},
+                                            ), ,
+                                            el(`text`,
+                                                {},
+                                            ), ,
+                                            el(`text`,
+                                                {},
+                                            ), ,
+                                            el(`text`,
+                                                {},
+                                            ),
+
+                                        ]
+                                    )
+                                ),
+                            )
+                        ]
+                    ),
+                    el('div',
+                        {
+                            className: 'back'
+                        },
+                    )
+                ]
+            )
+        )
+    ;
+
+    setChildren(document.body, [title, container]);
+};
+
+router.on('/', () => {
+    wrapper();
+});
+
+router.resolve();
 
 
 // $('.input__number').mask('9999 9999 9999 9999', {placeholder: 'xxxx xxxx xxxx xxxx'});
