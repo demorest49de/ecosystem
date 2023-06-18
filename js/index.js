@@ -12,43 +12,42 @@ const wrapper = () => {
 
 
     const container = el('div', {
-                className: 'container'
+            className: 'container'
+        },
+        el(`div`,
+            {
+                className: "creditcard"
             },
-            el(`div`,
-                {
-                    className: "creditcard"
-                },
-                [
-                    el(`div`,
-                        {
-                            className: "front"
-                        },
-                        [
-                            el(`div`,
+            [
+                el(`div`,
+                    {
+                        className: "front"
+                    },
+                    [
+                        el(`div`,
+                            {
+                                id: "ccsingle"
+                            }
+                        ),
+                        el(`svg`,
+                            {
+                                version: "1.1",
+                                id: "cardfront",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                x: "0px", y: "0px",
+                                viewBox: "0 0 750 471",
+                                "style": "enable-background: new 0 0 750 471",
+                                "xml:space": "preserve",
+                            }, el(`g`,
                                 {
-                                    className: "ccsingle"
-                                }
-                            ),
-                            el(`svg`,
-                                {
-                                    version: "1.1",
-                                    id: "cardfront",
-                                    xmlns: "http://www.w3.org/2000/svg",
-                                    "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                                    x: "0px", y: "0px",
-                                    viewBox: "0 0 750 471",
-                                    style: "enable-background:new 0 0 750 471;",
-                                    "xml:space": "preserve"
-
-                                }, el(`g`,
-                                    {
-                                        id: "froint"
-                                    },
+                                    id: "Front"
+                                },
+                                [
                                     el(`g`,
                                         {
                                             id: "CardBackground"
                                         },
-
                                         [
                                             el(`g`,
                                                 {
@@ -60,8 +59,8 @@ const wrapper = () => {
                                                         {
                                                             id: "Rectangle-1_1_",
                                                             className: "lightcolor grey",
-                                                            d: "M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9," +
-                                                                "40-40,40H40c-22.1,0-40-17.9-40-40V40C0,17.9,17.9,0,40,0z"
+                                                            d: "M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40," +
+                                                                "40H40c-22.1,0-40-17.9-40-40V40C0,17.9,17.9,0,40,0z"
                                                         },
                                                     )
                                                 ),
@@ -161,12 +160,12 @@ const wrapper = () => {
                                     ),
                                     el(`rect`,
                                         {
-                                            x:"82", y:"70", className:"st12", width:"1.5", height:"60"
+                                            x: "82", y: "70", className: "st12", width: "1.5", height: "60"
                                         },
                                     ),
                                     el(`rect`,
                                         {
-                                            x:"167.4", y:"70", className:"st12", width:"1.5", height:"60"
+                                            x: "167.4", y: "70", className: "st12", width: "1.5", height: "60"
                                         },
                                     ),
                                     el(`path`,
@@ -185,19 +184,112 @@ const wrapper = () => {
                                                 "c3.1-3.2,4.8-7.4,4.8-11.8C142.4,78.4,134.8,70.8,125.5,70.8z",
                                         },
                                     ),
-                                ),
+                                    el(`rect`,
+                                        {
+                                            x: "82", y: "70", className: "st12", width: "1.5", height: "60"
+                                        },
+                                    ),
+                                    el(`rect`,
+                                        {
+                                            x: "167.4", y: "70", className: "st12", width: "1.5", height: "60"
+                                        },
+                                    ),
+                                    el(`rect`,
+                                        {
+                                            x: "82", y: "70", className: "st12", width: "1.5", height: "60"
+                                        },
+                                    ),
+                                    el(`rect`,
+                                        {
+                                            x: "167.4", y: "70", className: "st12", width: "1.5", height: "60"
+                                        },
+                                    ),
+                                ]
                             )
+                        )
+                    ]
+                ),
+                el('div',
+                    {
+                        className: 'back'
+                    },
+                    el(`svg`,
+                        {
+                            version: "1.1",
+                            id: "cardback",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            x: "0px", y: "0px",
+                            viewBox: "0 0 750 471",
+                            "style": "enable-background: new 0 0 750 471",
+                            "xml:space": "preserve",
+                        },
+                        [
+                            el(`g`,
+                                {
+                                    id: "Front"
+                                },
+                                el(`line`,
+                                    {
+                                        className: "st0",
+                                        x1: "35.3", y1: "10.4", x2: "36.7", y2: "11"
+                                    },
+                                ),
+                            ),
+                            el(`g`,
+                                {
+                                    id: "Back"
+                                },
+                                [
+                                    el(`g`,
+                                        {
+                                            id: "Page-1_2_"
+                                        },
+                                        el(`g`,
+                                            {
+                                                id: "amex_2_"
+                                            },
+                                            el(`path`,
+                                                {
+                                                    id:"Rectangle-1_2_",
+                                                    className:"darkcolor greydark",
+                                                    d:"M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40" +
+                                                        "C0,17.9,17.9,0,40,0z"
+                                                },
+
+                                            ),
+                                        ),
+                                    ),
+                                    el(`rect`,
+                                        {
+                                            y: "61.6", className: "st2", width: "750", height: "78"
+                                        },
+                                    ),
+                                    el(`path`,
+                                        {
+                                            className: "st3",
+                                            d: "M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6," +
+                                                "6-6h652.1c3.3,0,6,2.7,6,6v52.5C707.1,246.4,704.4,249.1,701.1,249.1z"
+                                        },
+                                    ),
+                                    el(`rect`,
+                                        {
+                                            x: "42.9", y: "198.6", className: "st4", width: "664.1", height: "10.5"
+                                        },
+                                    ),
+                                    el(`rect`,
+                                        {
+                                            x: "42.9", y: "224.5", className: "st4", width: "664.1", height: "10.5"
+                                        },
+                                    ),
+                                ]
+                            ),
                         ]
                     ),
-                    el('div',
-                        {
-                            className: 'back'
-                        },
-                    )
-                ]
-            )
+                )
+            ]
         )
-    ;
+    );
 
     setChildren(document.body, [title, container]);
 };
