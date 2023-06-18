@@ -29,7 +29,7 @@ const wrapper = () => {
                                 id: "ccsingle"
                             }
                         ),
-                        el(`svg`,
+                        el('svg',
                             {
                                 version: "1.1",
                                 id: "cardfront",
@@ -213,7 +213,7 @@ const wrapper = () => {
                     {
                         className: 'back'
                     },
-                    el(`svg`,
+                    el('svg',
                         {
                             version: "1.1",
                             id: "cardback",
@@ -336,7 +336,57 @@ const wrapper = () => {
         )
     );
 
-    setChildren(document.body, [title, container]);
+    const formContainer = el('div', {
+            className: 'form-container'
+        },
+        el('div', {
+                className: 'field-container'
+            },
+            [
+                el('label', {
+                        for: 'name',
+                        textContent: 'Name'
+                    },
+                ),
+                el('input', {
+                        id: 'name',
+                        maxlength: "20",
+                        type: "text"
+                    },
+                ),
+            ]
+        ),
+        el('div', {
+                className: 'field-container'
+            },
+            [
+                el('label', {
+                        for: 'cardnumber',
+                        textContent: 'Card Number'
+                    },
+                ),
+                el('input', {
+                        id: 'cardnumber',
+                        type: "text",
+                        pattern: "[0-9]*",
+                        inputmode: "numeric",
+                    },
+                ),
+                el('svg',
+                    {
+                        version: "1.1",
+                        id: "ccicon",
+                        className: "ccicon",
+                        width: "750",
+                        height: "471",
+                        viewBox: "0 0 750 471"
+                    },
+                )
+            ]
+        ),
+    );
+
+    setChildren(document.body, [title, container, formContainer]);
 };
 
 router.on('/', () => {
