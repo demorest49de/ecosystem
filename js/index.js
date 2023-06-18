@@ -384,6 +384,42 @@ const wrapper = () => {
                 )
             ]
         ),
+        el('div', {
+                className: 'field-container'
+            },
+            [
+                el('label', {
+                        for: 'expirationdate',
+                        textContent: 'Expiration (mm/yy)',
+                    },
+                ),
+                el('input', {
+                        id: 'expirationdate',
+                        type: "text",
+                        pattern: "[0-9]*",
+                        inputmode: "numeric",
+                    },
+                ),
+            ]
+        ),
+        el('div', {
+                className: 'field-container'
+            },
+            [
+                el('label', {
+                        for: 'securitycode',
+                        textContent: 'Security Code'
+                    },
+                ),
+                el('input', {
+                        id: 'securitycode',
+                        type: "text",
+                        pattern: "[0-9]*",
+                        inputmode: "numeric",
+                    },
+                ),
+            ]
+        ),
     );
 
     setChildren(document.body, [title, container, formContainer]);
