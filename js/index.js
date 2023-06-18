@@ -251,12 +251,11 @@ const wrapper = () => {
                                             },
                                             el(`path`,
                                                 {
-                                                    id:"Rectangle-1_2_",
-                                                    className:"darkcolor greydark",
-                                                    d:"M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40" +
+                                                    id: "Rectangle-1_2_",
+                                                    className: "darkcolor greydark",
+                                                    d: "M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40" +
                                                         "C0,17.9,17.9,0,40,0z"
                                                 },
-
                                             ),
                                         ),
                                     ),
@@ -280,6 +279,52 @@ const wrapper = () => {
                                     el(`rect`,
                                         {
                                             x: "42.9", y: "224.5", className: "st4", width: "664.1", height: "10.5"
+                                        },
+                                    ),
+                                    el(`path`,
+                                        {
+                                            className: "st5",
+                                            d: "M701.1,184.6H618h-8h-10v64.5h10h8h83.1c3.3,0,6-2.7," +
+                                                "6-6v-52.5C707.1,187.3,704.4,184.6,701.1,184.6z"
+                                        },
+                                    ),
+                                    el(`text`,
+                                        {
+                                            transform: 'matrix(1 0 0 1 621.999 227.2734)',
+                                            id: 'svgsecurity',
+                                            className: 'st6 st7',
+                                            textContent: '985',
+                                        },
+                                    ),
+                                    el(`g`,
+                                        {
+                                            className: 'st8'
+                                        },
+                                        el('text',
+                                            {
+                                                transform: 'matrix(1 0 0 1 518.083 280.0879)',
+                                                id: '',
+                                                className: 'st9 st6 st10',
+                                                textContent: 'security code',
+                                            }
+                                        )
+                                    ),
+                                    el(`rect`,
+                                        {
+                                            x: "58.1", y: "378.6", className: "st11", width: "375.5", height: "13.5"
+                                        },
+                                    ),
+                                    el(`rect`,
+                                        {
+                                            x: "58.1", y: "405.6", className: "st11", width: "421.7", height: "13.5"
+                                        },
+                                    ),
+                                    el(`text`,
+                                        {
+                                            transform: 'matrix(1 0 0 1 59.5073 228.6099)',
+                                            id: 'svgnameback',
+                                            className: 'st12 st13',
+                                            textContent: 'Иван Иванов',
                                         },
                                     ),
                                 ]
